@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Fun & Interactive</title>
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+     <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #ff6ec4, #7873f5);
+  color: white;
+  overflow-x: hidden;
+}
+
+.contact-section {
+  padding: 50px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-header h1 {
+  font-size: 3rem;
+  animation: bounce 2s infinite;
+}
+
+.contact-header p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.contact-info, .contact-form {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 30px;
+  border-radius: 20px;
+  width: 350px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.contact-info:hover, .contact-form:hover {
+  transform: scale(1.05);
+}
+
+.contact-info h2, .contact-form h2 {
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  font-size: 2rem;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: rotate(15deg) scale(1.2);
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input, 
+.contact-form textarea {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  padding: 12px;
+  background: #ffcb57;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #ffeb3b;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+     </style>
+
+  <section class="contact-section">
+    <div class="contact-header">
+      <h1>📞 Get in Touch</h1>
+      <p>We’d ❤️ to hear from you! Whether you have questions, feedback, or just want to say hi 👋</p>
+    </div>
+
+    <div class="contact-container">
+      <!-- Left: Contact Info -->
+      <div class="contact-info">
+        <h2>📍 Our Location</h2>
+        <p>123 Happy Street, Creative City, India</p>
+
+        <h2>📧 Email Us</h2>
+        <p>support@yourstore.com</p>
+
+        <h2>📱 Call Us</h2>
+        <p>+91 98765 43210</p>
+
+        <div class="social-icons">
+          <a href="#">🌐</a>
+          <a href="#">📸</a>
+          <a href="#">🐦</a>
+          <a href="#">📘</a>
+        </div>
+      </div>
+
+      <!-- Right: Contact Form -->
+      <div class="contact-form">
+        <h2>📝 Send us a message</h2>
+        <form>
+          <input type="text" placeholder="Your Name 😊" required />
+          <input type="email" placeholder="Your Email 📩" required />
+          <textarea placeholder="Your Message 💬" required></textarea>
+          <button type="submit">🚀 Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

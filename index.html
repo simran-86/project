@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Tourism Management - Home</title>
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+    <style>
+        /* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background: #004a99;
+  padding: 12px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar .logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background-color: #005fa3;
+}
+
+/* Header */
+.header {
+  background-color: #0077cc;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+  color: white;
+  text-align: center;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 40px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.hero p {
+  font-size: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Features */
+.features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 20px;
+  background: white;
+}
+
+.feature {
+  width: 250px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f0f0f0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+.feature h3 {
+  margin-bottom: 10px;
+  color: #0077cc;
+  transition: color 0.3s;
+}
+
+.feature h3:hover {
+  color: #004a99;
+}
+
+.feature p {
+  color: #555;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: #004a99;
+  color: white;
+  padding: 15px 0;
+  margin-top: 20px;
+}
+
+    </style>
+
+  <!-- ✅ Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">Tourism</a>
+    <ul class="nav-links">
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ✅ Header -->
+  <header class="header">
+    <h1>🌍 Online Tourism Management by simarn</h1>
+  </header>
+
+  <!-- ✅ Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Explore the World with Us</h1>
+      <p>Your journey begins here. Find amazing tour packages across India!</p>
+    </div>
+  </section>
+
+  <!-- ✅ Features Section -->
+  <section class="features">
+    <div class="feature">
+      <a href="easybooking.html"><h3>Easy Booking</h3></a>
+      <p>Book your trip with just a few clicks.</p>
+    </div>
+    <div class="feature">
+      <a href="bestpackages.html"><h3>Best Packages</h3></a>
+      <p>Hand-picked travel experiences curated for you.</p>
+    </div>
+    <div class="feature">
+      <a href="support.html"><h3>24x7 Support</h3></a>
+      <p>We're here to help, anytime you need.</p>
+    </div>
+  </section>
+
+  <!-- ✅ Footer -->
+  <footer>
+    <p>&copy; 2025 Online Tourism Management. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

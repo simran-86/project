@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booking Form</title>
+  <link rel="stylesheet" href="booking.css" />
+</head>
+<body>
+    <style>
+        body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #0077cc;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.navbar {
+
+  background: #004a99;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background-color: #005fa3;
+}
+
+.booking-form {
+  max-width: 600px;
+  background: white;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.booking-form h2 {
+  margin-bottom: 20px;
+  color: #0077cc;
+}
+
+.booking-form label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.booking-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.booking-form button {
+  background-color: #0077cc;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.booking-form button:hover {
+  background-color: #005fa3;
+}
+
+    </style>
+  <header>
+    <h1>✈️ Book Your Package BY RUDRAKSHA</h1>
+  </header>
+
+  <nav class="navbar">
+    <div class="logo">TouristGo</div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="history.html">History</a></li> <!-- ✅ Added -->
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="booking-form" id="formSection">
+    <h2>Booking Details</h2>
+    <form id="bookingForm">
+      <label>Selected Package</label>
+      <input type="text" id="selectedPackage" name="package" readonly required>
+
+      <label>Full Name</label>
+      <input type="text" id="name" placeholder="Your name" required>
+
+      <label>Email</label>
+      <input type="email" id="email" placeholder="Your email" required>
+
+      <label>Travel Date</label>
+      <input type="date" id="date" required>
+
+      <button type="submit">Submit Booking</button>
+    </form>
+    <p id="confirmationMessage" style="margin-top: 10px;"></p>
+  </section>
+
+  <script>
+    // Get selected package from localStorage
+    const selectedPackage = localStorage.getItem("selectedPackage");
+    if (selectedPackage) {
+      document.getElementById("selectedPackage").value = selectedPackage;
+      localStorage.removeItem("selectedPackage");
+    }
+
+    // Booking confirmation and save
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const date = document.getElementById('date').value;
+      const pkg = document.getElementById('selectedPackage').value;
+
+      // Create booking object
+      const booking = {
+        name,
+        email,
+        date,
+        package: pkg,
+        time: new Date().toLocaleString()
+      };
+
+      // Save to localStorage
+      const allBookings = JSON.parse(localStorage.getItem('bookingHistory')) || [];
+      allBookings.push(booking);
+      localStorage.setItem('bookingHistory', JSON.stringify(allBookings));
+
+      // Show confirmation
+      document.getElementById('confirmationMessage').textContent =
+        `✅ Thank you, ${name}. Your booking for "${pkg}" has been received!`;
+
+      document.getElementById('bookingForm').reset();
+    });
+  </script>
+</body>
+</html>

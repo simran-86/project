@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Experience</title>
+    <link rel="stylesheet" href="book.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f9c5d1, #9795ef);
+    color: #333;
+}
+
+.header {
+    text-align: center;
+    padding: 30px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.header p {
+    font-size: 1.2rem;
+    color: #fdfdfd;
+}
+
+.booking-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.booking-form {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    width: 350px;
+    animation: slideIn 1s ease-in-out;
+}
+
+.booking-form label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: 500;
+}
+
+.booking-form input, 
+.booking-form select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.booking-form input:focus, 
+.booking-form select:focus {
+    border-color: #9795ef;
+    transform: scale(1.02);
+}
+
+.book-btn {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: #fff;
+    padding: 12px;
+    border: none;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.book-btn:hover {
+    background: linear-gradient(135deg, #9795ef, #f9c5d1);
+    transform: translateY(-3px);
+}
+
+.booking-info {
+    background: rgba(255,255,255,0.9);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    width: 300px;
+    animation: fadeUp 1s ease-in-out;
+}
+
+.booking-info h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.booking-info ul {
+    list-style: none;
+}
+
+.booking-info li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    margin-top: 30px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+</style>
+<header class="header">
+    <h1>📅 Book Your Experience</h1>
+    <p>Plan your adventure with ease — just a few clicks away!</p>
+</header>
+
+<section class="booking-container">
+    <form class="booking-form">
+        <label>👤 Full Name</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <label>📧 Email</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <label>📞 Phone Number</label>
+        <input type="tel" placeholder="Enter your phone" required>
+
+        <label>📍 Destination</label>
+        <select required>
+            <option value="">Choose your destination</option>
+            <option>Beach Paradise 🏖️</option>
+            <option>Mountain Escape ⛰️</option>
+            <option>City Lights 🌆</option>
+        </select>
+
+        <label>📆 Travel Date</label>
+        <input type="date" required>
+
+        <label>🕒 Duration</label>
+        <select required>
+            <option value="">Select duration</option>
+            <option>1-3 Days</option>
+            <option>4-7 Days</option>
+            <option>1+ Week</option>
+        </select>
+
+        <button type="submit" class="book-btn">🚀 Book Now</button>
+    </form>
+
+    <div class="booking-info">
+        <h2>Why Book With Us? 💡</h2>
+        <ul>
+            <li>✅ Easy & Secure Booking</li>
+            <li>🌍 Wide Range of Destinations</li>
+            <li>💬 24/7 Customer Support</li>
+            <li>🎉 Special Discounts & Offers</li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Your Travel Brand | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

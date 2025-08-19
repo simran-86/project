@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tour Packages</title>
+  <link rel="stylesheet" href="packages.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f7f7;
+    }
+
+    header {
+      text-align: center;
+      background-color: #009688;
+      color: white;
+      padding: 1.2rem 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #00695c;
+      padding: 0.8rem 1.5rem;
+    }
+
+    .logo {
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .packages {
+      padding: 2rem;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .card h3 {
+      margin-top: 0.8rem;
+      color: #333;
+    }
+
+    .card p {
+      color: #555;
+    }
+
+    .card button {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1.2rem;
+      background: #009688;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🌍 Explore Our Packages by simarn</h1>
+  </header>
+
+  <nav class="navbar">
+    <div class="logo">TouristGo</div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="packages">
+    <div class="card-container">
+
+      <!-- Sample Cards -->
+      <div class="card">
+        <img src="https://i.ytimg.com/vi/oxDGH8_bfmg/maxresdefault.jpg" alt="Goa">
+        <h3>Goa Getaway</h3>
+        <p>4 Days, 3 Nights – ₹12,000</p>
+        <button onclick="bookNow('Goa Getaway')">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.zABhja3sTtERYTP3JQlySAHaE8?pid=Api&P=0&h=180" alt="K2 Trek">
+        <h3>K2 Base Camp Trek</h3>
+        <p>14 Days, 13 Nights – ₹45,000</p>
+        <button onclick="bookNow('K2 Base Camp Trek')">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.Hj-OSSGOXuXsg2iewLxNjQHaEK?pid=Api&P=0&h=180" alt="Everest Base Camp">
+        <h3>Everest Base Camp</h3>
+        <p>12 Days, 11 Nights – ₹55,000</p>
+        <button onclick="bookNow('Everest Base Camp')">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.jFZrPmmEN8ZXnVUsFKSSfwHaEi?pid=Api&P=0&h=180" alt="Kanchenjunga Trek">
+        <h3>Kanchenjunga Base Camp</h3>
+        <p>15 Days, 14 Nights – ₹49,999</p>
+        <button onclick="bookNow('Kanchenjunga Base Camp')">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://siwaliktravels.com/wp-content/uploads/2024/09/Kedarkantha-Winter-Trek.webp" alt="Kedarkantha">
+        <h3>Kedarkantha Trek</h3>
+        <p>5 Days, 4 Nights – ₹9,999</p>
+        <button onclick="bookNow('Kedarkantha Trek')">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.TBaVvay2IBVhksgR1gVGOwHaFj?pid=Api&P=0&h=180" alt="Kashmir Lakes">
+        <h3>Kashmir Great Lakes</h3>
+        <p>7 Days, 6 Nights – ₹19,999</p>
+        <button onclick="bookNow('Kashmir Great Lakes')">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.MTJLPoMSG-h1R3S-z8oV0gHaDt?pid=Api&P=0&h=180" alt="Sar Pass">
+        <h3>Sar Pass Trek</h3>
+        <p>6 Days, 5 Nights – ₹11,500</p>
+        <button onclick="bookNow('Sar Pass Trek')">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://i.ytimg.com/vi/rhs2AZp0P7o/maxresdefault.jpg" alt="Friendship Peak">
+        <h3>Friendship Peak Expedition</h3>
+        <p>6 Days, 5 Nights – ₹22,000</p>
+        <button onclick="bookNow('Friendship Peak Expedition')">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://i.ytimg.com/vi/YFuJLo6LkSI/maxresdefault.jpg" alt="Nanda Devi">
+        <h3>Nanda Devi Base Camp</h3>
+        <p>9 Days, 8 Nights – ₹24,999</p>
+        <button onclick="bookNow('Nanda Devi Base Camp')">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://i.ytimg.com/vi/Omdf4okU8Ec/maxresdefault.jpg" alt="Annapurna">
+        <h3>Annapurna Base Camp</h3>
+        <p>10 Days, 9 Nights – ₹29,999</p>
+        <button onclick="bookNow('Annapurna Base Camp')">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.XbjgBuPrYCbt9DZNuirH4wHaEK?pid=Api&P=0&h=180" alt="Goechala">
+        <h3>Goechala Trek</h3>
+        <p>8 Days, 7 Nights – ₹17,000</p>
+        <button onclick="bookNow('Goechala Trek')">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://ik.imagekit.io/shortpedia/Voices/wp-content/uploads/2022/03/Gangotri-Glacier-trek@tourstaytravel.jpg"
+          alt="Gangotri Glacier">
+        <h3>Gangotri Glacier Trek</h3>
+        <p>7 Days, 6 Nights – ₹20,000</p>
+        <button onclick="bookNow('Gangotri Glacier Trek')">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.bNkERTl1yO854HVT6pNwzQHaEK?pid=Api&P=0&h=180" alt="Markha Valley">
+        <h3>Markha Valley Trek</h3>
+        <p>8 Days, 7 Nights – ₹21,500</p>
+        <button onclick="bookNow('Markha Valley Trek')">Book Now</button>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    function bookNow(packageName) {
+      localStorage.setItem("selectedPackage", packageName);
+      window.location.href = "booking.html";
+    }
+  </script>
+
+</body>
+</html>

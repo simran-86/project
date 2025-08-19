@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booking History</title>
+  <link rel="stylesheet" href="booking.css" />
+</head>
+<body>
+    <style>
+        body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+header {
+  background-color: #0077cc;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.navbar {
+  background: #004a99;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background-color: #005fa3;
+}
+
+.history {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.history h2 {
+  color: #0077cc;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.booking-record {
+  background-color: #eaf3ff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 5px solid #0077cc;
+  border-radius: 5px;
+}
+
+.booking-record p {
+  margin: 4px 0;
+  color: #333;
+}
+
+    </style>
+  <header>
+    <h1>📖 Booking History</h1>
+  </header>
+
+  <nav class="navbar">
+    <div class="logo">TouristGo</div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="history-section">
+    <h2>Previous Bookings</h2>
+    <table id="historyTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Package</th>
+          <th>Date</th>
+          <th>Time Booked</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Booking rows will appear here -->
+      </tbody>
+    </table>
+  </section>
+
+  <script>
+    const tableBody = document.querySelector("#historyTable tbody");
+    const bookings = JSON.parse(localStorage.getItem("bookingHistory")) || [];
+
+    if (bookings.length === 0) {
+      tableBody.innerHTML = "<tr><td colspan='5'>No bookings found.</td></tr>";
+    } else {
+      bookings.forEach(b => {
+        const row = `<tr>
+          <td>${b.name}</td>
+          <td>${b.email}</td>
+          <td>${b.package}</td>
+          <td>${b.date}</td>
+          <td>${b.time}</td>
+        </tr>`;
+        tableBody.innerHTML += row;
+      });
+    }
+  </script>
+</body>
+</html>
